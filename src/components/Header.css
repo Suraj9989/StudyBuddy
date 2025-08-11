@@ -1,52 +1,107 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to right, #6832cd, #071729);
-    color: white;
-    padding: 16px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #6832cd, #071729);
+  color: white;
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+  list-style: none;
+  display: flex;
+  gap: 25px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    position: relative;
-    transition: all 0.3s ease;
-    display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: white;
-    left: 0;
-    bottom: -4px;
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .nav-links a:hover {
-    color: #00ccff;
-    transform: scale(1.08);
+  color: #00ccff;
+  transform: scale(1.08);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: linear-gradient(to right, #6832cd, #071729);
+    flex-direction: column;
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    gap: 15px;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.open {
+    height: auto;
+    padding: 20px;
+    opacity: 1;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+  }
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(48deg) translateY(10px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-48deg) translateY(-10px);
 }

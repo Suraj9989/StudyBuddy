@@ -8,8 +8,7 @@ import './Notes.css';
 const Notes = () => {
   const [notes, setNotes] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
-
-  const user = JSON.parse(localStorage.getItem('currentUser'));
+  
   const {
     register,
     handleSubmit,
@@ -17,6 +16,8 @@ const Notes = () => {
     reset,
     formState: {errors}
   } = useForm();
+
+  const user = JSON.parse(localStorage.getItem('currentUser'));
 
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem(`notes-${user?.email}`)) || [];

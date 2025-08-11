@@ -9,10 +9,12 @@ import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import Notes from "./pages/Notes";
 import Tasks from "./pages/Tasks";
+import Learning from "./pages/Learning";
 // import BookDetails from "./pages/BookDetails";
 
 import "./App.css";
 import ParamPage from "./pages/ParamPage";
+// import Learning from "./pages/Learning";
 
 function App() {
   return (
@@ -30,7 +32,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/tasks" element={<Tasks />} />
-        {/* <Route path="/bookmarks" element={<Bookmarks />} /> */}
+        <Route path="/learn" element={<Learning />} /> 
+    {/* <Route path="/bookmarks" element={<Bookmarks />} /> */}
       {/* <Route path='*' element={<Errorpage/>}></Route> */}
       </Routes>
     </BrowserRouter>

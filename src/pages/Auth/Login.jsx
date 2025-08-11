@@ -13,7 +13,7 @@ const Login = () => {
 
     const matchedUser = savedUsers.find(
       (user) =>
-        user.username === data.username//.trim().toLowerCase()
+        user.username === data.username
       &&
         user.password === data.password
     );
@@ -33,9 +33,9 @@ const Login = () => {
       <h2>Login to StudyBuddy</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         <input
-          {...register("username", { required: "Username is required" })}
           type="text"
           placeholder="Username"
+          {...register("username", { required: "Username is required" })}
         />
         {errors.username && <p className="error">{errors.username.message}</p>}
 

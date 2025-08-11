@@ -65,7 +65,7 @@ const Tasks = () => {
     
     <div className="min-h-screen bg-gray-100">
       <Header />
-      <div className="max-w-2xl mx-auto p-4">
+      <div className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-lg">
         <h2 className="text-3xl font-bold mb-4 text-center text-purple-800">Your Tasks</h2>
 
         <div className="flex flex-col sm:flex-row gap-2 mb-4">

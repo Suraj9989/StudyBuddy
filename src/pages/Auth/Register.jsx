@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Register.css";
 
-const Register = () => {
+function Register() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
 
